@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Container } from "@/components/container";
 import { Header } from "@/components/Header";
+import { Hero } from "@/components/page/Hero";
+import { About } from "@/components/page/About";
 
 
 export const metadata: Metadata = {
@@ -19,6 +21,8 @@ export default function RootLayout({
       <body>
        <Container>
         <Header/>
+        <Hero/>
+        <About/>
         {children}
         </Container>
       </body>
