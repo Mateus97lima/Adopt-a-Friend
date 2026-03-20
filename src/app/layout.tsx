@@ -4,6 +4,10 @@ import { Container } from "@/components/container";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/page/Hero";
 import { About } from "@/components/page/About";
+import Divider from "@/components/Divider";
+import Slide from "@/components/Slide";
+
+
 
 
 export const metadata: Metadata = {
@@ -22,7 +26,10 @@ export default function RootLayout({
        <Container>
         <Header/>
         <Hero/>
+        <Divider  />
         <About/>
+        <Divider  />
+        <Slide/>
         {children}
         </Container>
       </body>

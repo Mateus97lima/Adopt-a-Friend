@@ -6,6 +6,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: linear-gradient(
+  to bottom right,
+  #f0e8dd,
+  rgba(240, 232, 221, 0.7),
+  #e6dccf);
   height: 100vh;
 }
 
@@ -14,4 +19,14 @@ body {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
+}
+
+
+@keyframes drive {
+  from {
+    transform: translateX(0) translateY(-50%);
+  }
+  to {
+    transform: translateX(-120vw) translateY(-50%);
+  }
 }

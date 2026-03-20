@@ -9,7 +9,7 @@ export function About() {
           {/* Image */}
           <div className="order-2 lg:order-1 rounded-3xl shadow-2xl animate-[float_3s_ease-in-out_infinite]">
             <div className="relative shadow-2xl animate-[float_4s_ease-in-out_infinite]">
-              <div className="absolute -top-6 left-6 w-full h-full bg-red-100 rounded-3xl "></div>
+              <div className="absolute -top-6 left-6 w-full h-full rounded-3xl "></div>
               <Image
                 src="/images/log-bry.jpg"
                 alt="🐾 Adopt a Friend 🐾"
