@@ -84,7 +84,7 @@ const slides: Slide[] = [
 
 export default function Slide() {
   return (
-    <section className="flex mt-22 justify-center items-center flex-col gap-10">
+    <section className="flex mt-23 mb-12 justify-center items-center flex-col gap-10">
       <h2 className="text-2xl font-bold">
         Animais disponíveis para{" "}
         <span className="text-[#FF7A00]"> 🐾 doação 🐾</span>

@@ -2,6 +2,8 @@ import { Button } from "@/components/Button";
 import { Users, Award, SmileIcon } from "lucide-react";
 import Image from "next/image";
 
+
+
 export function Hero() {
   return (
     <section className="relative min-h-screen flex mt-20 items-center bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] text-[#8B4513] overflow-hidden">
@@ -28,12 +30,14 @@ export function Hero() {
 
             {/* Button */}
             <div className="flex flex-col sm:flex-row gap-4">
+
               <Button
                 size="lg"
                 className="bg-[#FF7A00] hover:bg-[#e66a00] text-white text-lg px-8 py-6 rounded-full"
               >
                 Ver animais disponíveis
               </Button>
+
 
               <Button
                 size="lg"

@@ -6,6 +6,7 @@ import { Hero } from "@/components/page/Hero";
 import { About } from "@/components/page/About";
 import Divider from "@/components/Divider";
 import Slide from "@/components/Slide";
+import { FeedBack } from "@/components/FeedBack";
 
 
 
@@ -28,8 +29,11 @@ export default function RootLayout({
         <Hero/>
         <Divider  />
         <About/>
-        <Divider  />
+        <Divider />
         <Slide/>
+        <Divider />
+        <FeedBack/>
+        <Divider/>
         {children}
         </Container>
       </body>

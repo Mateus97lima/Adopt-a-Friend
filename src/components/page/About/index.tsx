@@ -7,7 +7,7 @@ export function About() {
       <div className="container mx-auto px-4 justify-center items-center ">
         <div className="grid lg:grid-cols-2 gap-12 items-center rounded-3xl">
           {/* Image */}
-          <div className="order-2 lg:order-1 rounded-3xl shadow-2xl animate-[float_3s_ease-in-out_infinite]">
+          <div className="order-1 lg:order-1 rounded-3xl shadow-2xl animate-[float_3s_ease-in-out_infinite]">
             <div className="relative shadow-2xl animate-[float_4s_ease-in-out_infinite]">
               <div className="absolute -top-6 left-6 w-full h-full rounded-3xl "></div>
               <Image
