@@ -1,12 +1,15 @@
 import { Button } from "@/components/Button";
-import { Users, Award, SmileIcon } from "lucide-react";
+import { Users, Award, SmileIcon} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
-export function Hero() {
+
+
+export default function Hero() {
   return (
-    <section className="relative min-h-screen flex mt-20 items-center bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] text-[#8B4513] overflow-hidden">
+    <section id="Home" className="relative min-h-screen flex mt-20 items-center bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] text-[#8B4513] overflow-hidden">
       <div className="container mx-auto px-4 py-20 relative z-10 shadow-lg rounded-3xl bg-[#F0E8DD] backdrop-blur-sm">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -33,10 +36,13 @@ export function Hero() {
 
               <Button
                 size="lg"
-                className="bg-[#FF7A00] hover:bg-[#e66a00] text-white text-lg px-8 py-6 rounded-full"
-              >
+                className="bg-[#FF7A00] hover:bg-[#e66a00] text-white text-lg px-8 py-6 rounded-full cursor-pointer"
+               >
+                <Link href="#slide">
                 Ver animais disponíveis
+                </Link>
               </Button>
+
 
 
               <Button
@@ -44,7 +50,7 @@ export function Hero() {
                 variant="outline"
                 className="border-2 border-[#8B4514] text-[#8B4513] hover:bg-black/5 text-lg px-8 py-6 rounded-full"
               >
-                Saiba mais
+                <Link href="#about">Saiba mais</Link>
               </Button>
             </div>
 

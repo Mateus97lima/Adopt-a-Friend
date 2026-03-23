@@ -3,7 +3,7 @@
 import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Testimonial = {
   name: string;
@@ -22,13 +22,19 @@ export function FeedBack() {
   const [rating, setRating] = useState(5);
   const [imageUrl, setImageUrl] = useState("");
 
+const [userFeedbacks, setUserFeedbacks] = useState<Testimonial[]>(() => {
+  const data = localStorage.getItem("feedbacks");
+  return data ? JSON.parse(data) : [];
+});
+
   const [errors, setErrors] = useState({
     name: "",
     petName: "",
     text: "",
   });
 
-  const testimonials: Testimonial[] = [
+  // 🔥 Feedbacks fixos
+  const defaultFeedbacks: Testimonial[] = [
     {
       name: 'Carlos Mendes',
       role: 'Gerente de TI',
@@ -39,8 +45,8 @@ export function FeedBack() {
     {
       name: 'Marina Costa',
       role: 'Advogada',
-      imageUrl: '/images/gato-bry.png',
-      text: 'Sempre quis adotar um gatinho, e aqui encontrei a Luna. Atendimento incrível!',
+      imageUrl: '/images/gato5.jpg',
+      text: 'Sempre quis adotar um gatinho, e aqui encontrei a belen. Atendimento incrível!',
       rating: 5,
     },
     {
@@ -51,27 +57,20 @@ export function FeedBack() {
       rating: 5,
     },
     {
-      name: 'Juliana Oliveira',
-      role: 'Médica',
-      imageUrl: '/images/dog1.jpg',
-      text: 'Fiquei impressionada com o cuidado com os animais. Recomendo muito!',
-      rating: 5,
-    },
-    {
-      name: 'Pedro Santos',
-      role: 'Engenheiro',
-      imageUrl: '/images/dog5.jpg',
-      text: 'Adotei o Max e minha rotina mudou completamente. Experiência maravilhosa!',
-      rating: 5,
-    },
-    {
-      name: 'Amanda Rodrigues',
-      role: 'Executiva de Marketing',
-      imageUrl: '/images/dog2.jpg',
-      text: 'Sempre tive medo do processo de adoção, mas aqui foi tudo muito tranquilo..',
-      rating: 5,
-    },
+    name: 'Pedro Santos',
+    role: 'Engenheiro',
+    imageUrl: '/images/dog5.jpg',
+    text: 'Adotei o Max e minha rotina mudou completamente. Experiência maravilhosa!',
+    rating:5,
+    }
   ];
+   // criar btn de apagar
+
+
+  // 🔥 Salvar no localStorage
+  useEffect(() => {
+    localStorage.setItem("feedbacks", JSON.stringify(userFeedbacks));
+  }, [userFeedbacks]);
 
   function handleImage(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -114,6 +113,16 @@ export function FeedBack() {
 
     if (!validate()) return;
 
+    const newFeedback: Testimonial = {
+      name,
+      role: petName,
+      text,
+      rating,
+      imageUrl: imageUrl || "/images/default.jpg",
+    };
+
+    setUserFeedbacks((prev) => [...prev, newFeedback]);
+
     alert("Feedback enviado 🚀");
 
     setName("");
@@ -130,6 +139,9 @@ export function FeedBack() {
     });
   }
 
+  // 🔥 Junta fixos + usuário
+  const allFeedbacks = [...defaultFeedbacks, ...userFeedbacks];
+
   return (
     <section id="depoimentos" className="py-20 bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] text-[#8B4513]">
       <div className="container mx-auto px-4">
@@ -142,12 +154,12 @@ export function FeedBack() {
             O Que as Pessoas Estão Dizendo
           </h2>
           <p className="text-xl text-gray-700">
-            Histórias reais de pessoas que Adotarão um animal.
+            Histórias reais de pessoas que adotaram um animal.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {allFeedbacks.map((testimonial, index) => (
             <div
               key={index}
               className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl relative hover:shadow-lg transition-shadow"
@@ -185,7 +197,7 @@ export function FeedBack() {
           <Button
             variant="outline"
             size="sm"
-            className=" text-[#8B4513] p-4 bg-[#FF7A00] cursor-pointer transform hover:bg-[#FF7A00]/90mt-2 cursor-pointer"
+            className="text-[#8B4513] p-4 bg-[#FF7A00] cursor-pointer hover:bg-[#FF7A00]/90"
             onClick={() => setOpen(true)}
           >
             Diga seu Feedback
@@ -204,40 +216,28 @@ export function FeedBack() {
             <form onSubmit={handleSubmit}>
 
               <input
-                className={`w-full border p-2 mb-1 rounded ${
-                  errors.name ? "border-red-500" : ""
-                }`}
+                className={`w-full border p-2 mb-1 rounded ${errors.name ? "border-red-500" : ""}`}
                 placeholder="Seu nome"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              {errors.name && (
-                <p className="text-red-500 text-sm mb-2">{errors.name}</p>
-              )}
+              {errors.name && <p className="text-red-500 text-sm mb-2">{errors.name}</p>}
 
               <input
-                className={`w-full border p-2 mb-1 rounded ${
-                  errors.petName ? "border-red-500" : ""
-                }`}
+                className={`w-full border p-2 mb-1 rounded ${errors.petName ? "border-red-500" : ""}`}
                 placeholder="Nome do pet 🐶"
                 value={petName}
                 onChange={(e) => setPetName(e.target.value)}
               />
-              {errors.petName && (
-                <p className="text-red-500 text-sm mb-2">{errors.petName}</p>
-              )}
+              {errors.petName && <p className="text-red-500 text-sm mb-2">{errors.petName}</p>}
 
               <textarea
-                className={`w-full border p-2 mb-1 rounded ${
-                  errors.text ? "border-red-500" : ""
-                }`}
+                className={`w-full border p-2 mb-1 rounded ${errors.text ? "border-red-500" : ""}`}
                 placeholder="Comentário"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
               />
-              {errors.text && (
-                <p className="text-red-500 text-sm mb-2">{errors.text}</p>
-              )}
+              {errors.text && <p className="text-red-500 text-sm mb-2">{errors.text}</p>}
 
               <input type="file" onChange={handleImage} className="mb-3" />
 
@@ -272,7 +272,7 @@ export function FeedBack() {
 
                 <Button
                   type="submit"
-                  className="text-[#8B4513] p-4 bg-[#FF7A00] cursor-pointer transform hover:bg-[#FF7A00]/90 px-4 py-2 rounded"
+                  className="text-[#8B4513] p-4 bg-[#FF7A00] cursor-pointer hover:bg-[#FF7A00]/90 px-4 py-2 rounded"
                 >
                   Enviar
                 </Button>

@@ -20,8 +20,8 @@ export function Header(){
             <div className="w-10 h-10  rounded-full flex items-center justify-center">
               <BoneIcon className="w-6 h-6 text-black" />
             </div>
-            <h1 className={clsx('text-xl lg:text-[1.5em] font-bold text-gray-900  ')}>
-              <Link href="/">🐾 Adopt a Friend 🐾</Link>
+            <h1 className={clsx('text-xl lg:text-[1.5em] font-bold text-gray-900 ')}>
+              <Link href="/slide">🐾 Adopt a Friend 🐾</Link>
             </h1>
 
           </div>
@@ -45,16 +45,16 @@ export function Header(){
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col gap-4">
-              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
+              <Link href="#" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
                 Inicio
-              </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
+              </Link>
+              <Link href="#about" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
               Sobre
-              </a>
-              <a href="#" className=" flex gap-1 text-gray-700 hover:text-orange-600 transition-colors py-2">
+              </Link>
+              <Link href="#slide" className=" flex gap-1 text-gray-700 hover:text-orange-600 transition-colors py-2">
                 Pets
                   <BoneIcon className="w-4 h-5 text-gray-700 hover:text-orange-600 transition-colors" />
-              </a>
+              </Link>
               <a href="#" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
                 Contato
               </a>

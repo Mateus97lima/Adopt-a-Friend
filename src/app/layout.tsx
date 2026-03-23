@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Container } from "@/components/container";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/page/Hero";
-import { About } from "@/components/page/About";
-import Divider from "@/components/Divider";
-import Slide from "@/components/Slide";
-import { FeedBack } from "@/components/FeedBack";
+import { Header } from "../components/Header/page";
+
+
+
 
 
 
@@ -24,16 +22,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-       <Container>
+      <Container>
         <Header/>
-        <Hero/>
-        <Divider  />
-        <About/>
-        <Divider />
-        <Slide/>
-        <Divider />
-        <FeedBack/>
-        <Divider/>
+
         {children}
         </Container>
       </body>

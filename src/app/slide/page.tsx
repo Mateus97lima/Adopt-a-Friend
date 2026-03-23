@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import { Button } from "../Button";
+import { Button } from "../../components/Button";
 
 type Slide = {
   id: number;
@@ -84,7 +84,7 @@ const slides: Slide[] = [
 
 export default function Slide() {
   return (
-    <section className="flex mt-23 mb-12 justify-center items-center flex-col gap-10">
+    <section id="slide" className="flex mt-23 mb-12 justify-center items-center flex-col gap-10">
       <h2 className="text-2xl font-bold">
         Animais disponíveis para{" "}
         <span className="text-[#FF7A00]"> 🐾 doação 🐾</span>

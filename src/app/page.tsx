@@ -1,11 +1,25 @@
-import { Header } from "@/components/Header";
+
+import Divider from "@/components/Divider";
+
+import Slide from "./slide/page";
+import { FeedBack } from "@/components/FeedBack";
+import About from "@/app/about/page";
+import Hero from "./hero/page";
 
 
 export default function Home() {
   return (
-      <main className=" max-w-6xl mx-auto px-6">
-      
-      </main>
+<>
+          <Hero/>
+          <Divider  />
+          <About/>
+          <Divider />
+          <Slide/>
+          <Divider />
+          <FeedBack/>
+          <Divider/>
+
+</>
 
   );
 }

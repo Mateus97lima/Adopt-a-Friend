@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export function About() {
+export default function About() {
 
   return (
-    <section id="sobre" className="py-20 bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] text-[#8B4513] overflow-hidden  ">
+    <section id="about" className="py-20 bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] text-[#8B4513] overflow-hidden  ">
       <div className="container mx-auto px-4 justify-center items-center ">
         <div className="grid lg:grid-cols-2 gap-12 items-center rounded-3xl">
           {/* Image */}
