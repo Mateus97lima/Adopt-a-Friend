@@ -1,3 +1,21 @@
+@keyframes contato-bg {
+  0% {
+    transform: scale(1) translateY(0);
+    filter: blur(0px) brightness(1);
+  }
+  50% {
+    transform: scale(1.04) translateY(-10px);
+    filter: blur(2px) brightness(1.05);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+.animate-contato-bg {
+  animation: contato-bg 20s linear infinite;
+}
 @import "tailwindcss";
 
 

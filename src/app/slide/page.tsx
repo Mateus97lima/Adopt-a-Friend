@@ -104,7 +104,7 @@ export default function Slide() {
           768: { slidesPerView: 3 },
           1024: { slidesPerView: 5 },
         }}
-        className="w-full h-auto px-4 "
+        className="w-full h-auto  px-4 "
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
@@ -115,7 +115,7 @@ export default function Slide() {
                 height={800}
                 src={slide.imageUrl}
                 alt={slide.title}
-                className="w-full h-36 md:h-48 object-cover"
+                className="w-full h-55 md:h-48 object-cover "
               />
 
               {/* conteúdo */}
