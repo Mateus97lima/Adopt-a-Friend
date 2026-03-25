@@ -23,43 +23,43 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    title: "lucas",
+    title: "Lucas",
     description: "2 anos, macho, castrado, vacinado e vermifugado",
     imageUrl: "/images/gato3.jpg",
   },
   {
     id: 3,
-    title: "raabel",
+    title: "Raabel",
     description: "1 ano, macho, castrado, vacinado e vermifugado",
     imageUrl: "/images/gato2.jpg",
   },
   {
     id: 4,
-    title: "teresa",
+    title: "Teresa",
     description: "2 anos, fêmea, castrada, vacinada e vermifugada",
     imageUrl: "/images/dog6.jpg",
   },
   {
     id: 5,
-    title: "rex",
+    title: "Rex",
     description: "4 meses, macho, castrado, vacinado e vermifugado",
     imageUrl: "/images/dog4.jpg",
   },
   {
     id: 6,
-    title: "luna",
+    title: "Luna",
     description: "1 mes, fêmea, castrada, vacinada e vermifugada",
     imageUrl: "/images/dog5.jpg",
   },
   {
     id: 7,
-    title: "milly",
+    title: "Milly",
     description: "1 ano, fêmea, castrada, vacinada e vermifugada",
     imageUrl: "/images/dog2.jpg",
   },
   {
     id: 8,
-    title: "bryen",
+    title: "Bryen",
     description: "1 ano, macho, castrado, vacinado e vermifugado",
     imageUrl: "/images/gato4.jpg",
   },
@@ -71,13 +71,13 @@ const slides: Slide[] = [
   },
   {
     id: 10,
-    title: "belen",
+    title: "Belen",
     description: "2 meses, macho, castrado, vacinado e vermifugado",
     imageUrl: "/images/gato5.jpg",
   },
   {
     id: 11,
-    title: "nana",
+    title: "Nana",
     description: "1 ano, macho, castrado, vacinado e vermifugado",
     imageUrl: "/images/dog1.jpg",
   },
@@ -97,7 +97,7 @@ export default function Slide() {
         modules={[Autoplay]}
         autoplay={{
           delay: 2000, // tempo entre slides (2 segundos)
-          disableOnInteraction: false, // continua mesmo se o usuário mexer
+          disableOnInteraction: false, 
         }}
         breakpoints={{
           360: {slidesPerView: 1},

@@ -7,13 +7,13 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-linear-to-br from-[#f0e8dd] via-[#f0e8dd]/70 to-[#e6dccf] py-12 px-4 mt-20 overflow-hidden">
 
-      {/* Decoração */}
+      
       <BoneIcon className="absolute left-6 bottom-6 w-10 h-10 text-[#FF7A00]/70 rotate-12 animate-bounce" />
       <BoneIcon className="absolute right-6 top-6 w-8 h-8 text-[#8B4513]/60 -rotate-12 animate-pulse" />
 
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 text-center">
 
-        {/* Título */}
+
         <h3 className="text-sm sm:text-base md:text-2xl font-bold text-[#8B4513] flex flex-wrap items-center justify-center gap-2 text-center">
           Feito com <span className="animate-pulse">🐾</span> por Adopt a Friend
         </h3>
