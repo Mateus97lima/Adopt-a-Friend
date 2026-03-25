@@ -13,7 +13,7 @@ export default function Header(){
     return(
 
     <header className="fixed top-0 left-0 right-0 z-50 bg-#fff4e6 backdrop-blur-sm shadow-sm">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center ">
@@ -40,8 +40,8 @@ export default function Header(){
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden py-4 border-t ">
+            <nav className="flex flex-col gap-5">
               <Link href="#" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
                 Inicio
               </Link>
@@ -55,8 +55,8 @@ export default function Header(){
               <a href="#contato" className="text-gray-700 hover:text-orange-600 transition-colors py-2">
                 Contato
               </a>
-              <Link href="#contato">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full">
+              <Link href="#contato" className="w-full flex justify-center items-center text-center">
+                <Button className="w-full max-w-sm bg-orange-500 hover:bg-orange-600 text-white rounded-full">
                 Adopt Now
               </Button></Link>
 
