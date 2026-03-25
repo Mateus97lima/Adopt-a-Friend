@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import { Button } from "../../components/Button";
+import { Button } from "../Button";
+import Link from "next/link";
 
 type Slide = {
   id: number;
@@ -125,7 +126,10 @@ export default function Slide() {
                 </h3>
                 <p className="text-[#8B4513] text-sm">{slide.description}</p>
               </div>
+              <Link href="#contato">
               <Button className="font-bold text-[#8B4513] p-4 bg-[#FF7A00] cursor-pointer transform hover:bg-[#FF7A00]/90"> 🐶Adopt me🐱</Button>
+              </Link>
+
             </div>
           </SwiperSlide>
         ))}

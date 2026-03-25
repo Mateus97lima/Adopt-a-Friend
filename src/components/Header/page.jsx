@@ -8,7 +8,7 @@ import { Button } from "../Button";
 import { DesktopNavigation } from "../Navigation/Desktop";
 
 
-export function Header(){
+export default function Header(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return(
 

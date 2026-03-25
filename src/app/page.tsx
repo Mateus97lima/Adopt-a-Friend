@@ -1,11 +1,11 @@
 
 import Divider from "@/components/Divider";
 
-import Slide from "./slide/page";
+import Slide from "../components/slide/page";
 import { FeedBack } from "@/components/FeedBack";
-import About from "@/app/about/page";
-import Hero from "./hero/page";
-import Contato from "./contato/page";
+import About from "@/components/about/page";
+import Hero from "../components/hero/page";
+import Contato from "../components/contato/page";
 import Footer from "@/components/footer/page";
 
 
