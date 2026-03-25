@@ -86,9 +86,9 @@ const slides: Slide[] = [
 export default function Slide() {
   return (
     <section id="slide" className="flex mt-23 mb-12 justify-center items-center flex-col gap-10">
-      <h2 className="text-2xl font-bold">
+      <h2 className="text-2xl font-bold ">
         Animais disponíveis para{" "}
-        <span className="text-[#FF7A00]"> 🐾 doação 🐾</span>
+        <span className="inline-block text-[#FF7A00] animate-bounce transition-all"> 🐾 doação 🐾</span>
       </h2>
 
       <Swiper
@@ -100,10 +100,12 @@ export default function Slide() {
           disableOnInteraction: false, // continua mesmo se o usuário mexer
         }}
         breakpoints={{
+          360: {slidesPerView: 1},
+          375: {slidesPerView: 1},
           480: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
           768: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
+          1024:{ slidesPerView: 5 },
         }}
         className="w-full h-auto  px-4 "
       >

@@ -17,7 +17,7 @@ export default function Header(){
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center ">
-            <h1 className={clsx('text-xl lg:text-[1.5em] font-bold text-gray-900 ')}>
+            <h1 className={clsx('text-xl lg:text-[1.5em] ml-10 font-bold text-gray-900 ')}>
               <Link href="/slide">🐾 Adopt a Friend 🐾</Link>
             </h1>
 
